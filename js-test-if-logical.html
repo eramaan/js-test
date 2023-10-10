@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+    let min = 100
+    let max = 130
+    let age = Math.floor(Math.random() * (max - min + 1) + min)
+
+    function checkAge(age) {
+      if (age < 14) {
+        return "Too low!"
+      } else if (age > 90) {
+        return "Too high!"
+      } else {
+        return "Goood"
+      }
+    }
+
+    function checkAgeLogicalOps(age) {
+      if (age >= 14 && age <= 90) {
+        return "So Good"
+      } else {
+        return "No Good"
+      }
+    }
+
+    function checkNotAgeLogicalOps(age) {
+      if (age <= 14 || age >= 90) {
+        return "So Good"
+      } else {
+        return "No Good"
+      }
+    }
+
+    function checkNotAge2LogicalOps(age) {
+      if (!(age >= 14 && age <= 90)) {
+        return "So Good"
+      } else {
+        return "No Good"
+      }
+    }
+
+    console.log(checkAge(age))
+    console.log(checkAgeLogicalOps(age))
+    console.log(checkNotAgeLogicalOps(age))
+    console.log(checkNotAge2LogicalOps(age))
+  </script>
+</body>
+</html>
