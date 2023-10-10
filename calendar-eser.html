@@ -7,31 +7,69 @@
     <title>HTML 5 Boilerplate</title>
   </head>
   <body>
-	<script>
-        const select = document.querySelector('select');
-        const list = document.querySelector('ul');
-        const h1 = document.querySelector('h1');
+    <h2>Live output</h2>
+    <div class="output" style="height: 500px;overflow: auto;">
+      <label for="month">Select month: </label>
+      <select id="month">
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+      </select>
 
-        select.addEventListener('change', () => {
-        const choice = select.value;
+      <h1></h1>
 
-        // ADD CONDITIONAL HERE - the xercise comes from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals#active_learning_a_simple_calendar
+      <ul></ul>
+    </div>
 
-        createCalendar(days, choice);
-        });
+	  <script>
+      const select = document.querySelector('select');
+      const list = document.querySelector('ul');
+      const h1 = document.querySelector('h1');
 
-        function createCalendar(days, choice) {
-        list.innerHTML = '';
-        h1.textContent = choice;
-        for (let i = 1; i <= days; i++) {
-            const listItem = document.createElement('li');
-            listItem.textContent = i;
-            list.appendChild(listItem);
-        }
-        }
+      select.addEventListener('change', () => {
+      const choice = select.value;
+      let days = 31;  //you need to create the variable 'days'...maybe I can not use the default?
 
-        createCalendar(31,'January');
-        
+      // ADD CONDITIONAL HERE - the exercise comes from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals#active_learning_a_simple_calendar
+      switch (choice) {
+        case  "February":
+        days = 28;
+        break;
+
+        case ("April" || "June" || "September" || "November"):
+        days = 30;
+        break;
+
+        default:
+        days = 31;
+        break;
+      }
+
+
+      createCalendar(days, choice);
+      });
+
+      function createCalendar(days, choice) {
+      list.innerHTML = '';
+      h1.textContent = choice;
+      for (let i = 1; i <= days; i++) {
+          const listItem = document.createElement('li');
+          listItem.textContent = i;
+          list.appendChild(listItem);
+      }
+      }
+
+      createCalendar(31,'January');
+      
     </script>
   </body>
 </html>
