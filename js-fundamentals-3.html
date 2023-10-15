@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add7(num) {
+            return num + 7
+        }
+        console.log(add7(3))
+
+        function multiply(num1, num2) {
+            return num1 * num2
+        }
+
+        console.log(multiply(2, 3))
+
+        function capitalize(name) {
+            let firstLetter = name.charAt(0)
+            let firstLetterCap = firstLetter.toUpperCase()
+            let remainingLetters = name.slice(1)
+            let remainingLettersLow = remainingLetters.toLowerCase()
+            nameFirstCap = firstLetterCap + remainingLettersLow
+            return nameFirstCap
+        }
+
+        console.log(capitalize("aBraCADAbrA"))
+
+        // can also be:
+
+        // function capitalize(name) {
+        //     return name.charAt(0).toUpperCase + name.slice(1).toLowerCase;
+        // }
+
+        // console.log(capitalize("aBraCADAbrA"))
+
+
+        function lastLetter(otherName) {
+            return otherName.charAt(otherName.length-1);
+        }
+
+        console.log(lastLetter("Abracadabro"))
+    </script>
+</body>
+</html>
+
